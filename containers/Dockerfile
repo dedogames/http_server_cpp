@@ -1,4 +1,4 @@
-FROM ggr_cpp_image:0.1
+FROM geoldery/ggr_cpp_image:0.1
 
 RUN yum install -y telnet gdb git \
     && yum clean all

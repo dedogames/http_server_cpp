@@ -14,9 +14,7 @@ set_target_properties(httpserver PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${INSTALLAT
 install(TARGETS httpserver DESTINATION bin)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}) 
 
-set(httpserver_TARGET_LIBRARIES
-    wsock32 #Winsocket to boost::asio
-    ws2_32  #Winsocket to boost::asio
+set(httpserver_TARGET_LIBRARIES 
     ${CMAKE_THREAD_LIBS_INIT} #pthread
     ${Boost_FILESYSTEM_LIBRARY}
     ${Boost_THREAD_LIBRARY}
@@ -28,7 +26,7 @@ set(httpserver_TARGET_LIBRARIES
     ${Boost_TIMER_LIBRARIES}
     ${Boost_CHRONO_LIBRARIES}
     ${Boost_PROGRAM_OPTIONS_LIBRARIES}            
-    ${Boost_ASIO_LIBRARIES} 
+   
 ) 
  
 #link libs with executable httpserver

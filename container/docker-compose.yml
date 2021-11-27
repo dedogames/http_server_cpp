@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+
+  http_server:
+    image: httpserver:debug
+    networks:
+      - local
+    volumes:
+      - ../../../http_server/src:/cvortex/http_server/src
+      - ../../../http_server/library:/cvortex/http_server/htdocs
+      - ../../../http_server/CMakeLists.txt:/cvortex/http_server/CMakeLists.txt
+      - ../../../http_server/.gitignore:/cvortex/http_server/.gitignore
+      - ../../../http_server/.git:/cvortex/http_server/.git
+      - ../../../http_server/containers/launch.json:/cvortex/http_server/.vscode/launch.json
+      - ../../../http_server/containers/settings.json:/cvortex/http_server/.vscode/settings.json
+      - ../../../http_server/containers:/cvortex/http_server/containers
+      - /root/.ssh:/root/.ssh # Forward local machine SSH key to docker 
+networks:
+  local:
+    driver: bridge
+
+#build
+#docker-compose -f containers/debug/docker-compose.yml up -d

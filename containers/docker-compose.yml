@@ -10,8 +10,8 @@ services:
       - ../../http_server_cpp/src:/project/http_server/src 
       - ../../http_server_cpp/htdocs:/project/http_server/htdocs
       - ../../http_server_cpp/CMakeLists.txt:/project/http_server/CMakeLists.txt
-      #- ../../http_server/.gitignore:/project/http_server/.gitignore
-      #- ../../http_server/.git:/project/http_server/.git
+      - ../../http_server_cpp/.gitignore:/project/http_server/.gitignore
+      - ../../http_server_cpp/.git:/project/http_server/.git
       - ../../http_server_cpp/containers/launch.json:/project/http_server/.vscode/launch.json
       - ../../http_server_cpp/containers/settings.json:/project/http_server/.vscode/settings.json
       - ../../http_server_cpp/containers:/project/http_server/containers
